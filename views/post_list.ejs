@@ -6,7 +6,9 @@
 <ol>
     <% results.forEach(function(post) {%>
         <li>
-            <%= post.message %>
+            <img src=<%= post.imageUrl %> alt = "Post Image" height = "150" width = "150" />
+           <p><%= post.message %></p> 
+           <p>Posted By: <%= post.postedBy.name %> on <%= post.createdAt %></p> 
         </li>
     <% }); %>
 </ol>

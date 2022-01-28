@@ -5,9 +5,23 @@
 <h1>Users</h1>
 <ol>
     <% results.forEach(function(user) {%>
-        <li>
-            <%= user.name %>
-        </li>
+    <li>
+        <img 
+            src = "<%=  user.profileImageUrl %>" 
+            alt = "<%= user.name %>" 
+            height = "150" 
+            width = "150" 
+        />
+        <img 
+            src = "<%=  user.coverImageUrl %>" 
+            alt = "<%= user.name %>" 
+            height = "150" 
+            width = "150" 
+        />
+        <p> <em><%= user.name %></em></p>  
+   
+    
+    </li>
     <% }); %>
 </ol>
 <%if (next) { %>
