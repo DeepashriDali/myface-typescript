@@ -1,0 +1,26 @@
+<html lang="en-gb">
+<%- include('_head') -%>
+<%- include('_header') -%>
+<body>
+
+<h1>Post</h1>
+<p><%= message %></p>
+<p>Post created at: <%= createdAt %></p>
+<img 
+src = "<%=  imageUrl %>" 
+alt = "Profile Image" 
+height = "150" 
+width = "150" 
+/>
+
+<br> <br>
+<form method="post" action="/posts/<%= id %>/like">
+    <button type="submit">LIKE</button>
+</form>
+<br>
+<form method="post" action="/posts/<%= id %>/dislike">
+<button type="submit">DISLIKE</button>
+</form>
+</body>
+<%- include('_footer') -%>
+</html>
