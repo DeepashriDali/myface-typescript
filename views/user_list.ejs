@@ -19,17 +19,19 @@
             width = "150" 
         />
         <p> <em><%= user.name %></em></p>  
-   
-    
+        <p> Number of posts: <em><%= user.posts.length %></em> </p>
+        <p> Likes: <em><%= user.likes.length %></em> Dislikes: <em><%= user.dislikes.length %></em></p> 
+       
     </li>
     <% }); %>
 </ol>
-<%if (next) { %>
-    <a href="<%= next %>">Next</a>
-<% } %>
 <%if (previous) { %>
     <a href="<%= previous %>">Previous</a>
 <% } %>
+<%if (next) { %>
+    <a href="<%= next %>">Next</a>
+<% } %>
+
 </body>
 <%- include('_footer') -%>
 </html>

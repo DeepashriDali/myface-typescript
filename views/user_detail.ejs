@@ -3,6 +3,20 @@
 <%- include('_header') -%>
 <body>
 <h1><%= name %></h1>
+<img 
+src = "<%=  profileImageUrl %>" 
+alt = "Profile Image>" 
+height = "150" 
+width = "150" 
+/>
+<img 
+src = "<%=  coverImageUrl %>" 
+alt = "<%= name %>" 
+height = "150" 
+width = "150" 
+/>
+<p> Likes: <em><%= likes.length %></em> Dislikes: <em><%= dislikes.length %></em></p>  
+ 
 </body>
 <%- include('_footer') -%>
 </html>

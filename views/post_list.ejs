@@ -8,10 +8,18 @@
         <li>
             <img src=<%= post.imageUrl %> alt = "Post Image" height = "150" width = "150" />
            <p><%= post.message %></p> 
-           <p>Posted By: <%= post.postedBy.name %> on <%= post.createdAt %></p> 
+           <p><b>Posted By:</b> <%= post.postedBy.name %> on <%= post.createdAt %></p> 
+           <p><b>Likes:</b> <em><%= post.likedBy.length %></em> <b>Dislikes:</b><em><%= post.dislikedBy.length %></em>
+           </p> 
         </li>
     <% }); %>
 </ol>
+    <%if (previous) { %>
+    <a href="<%= previous %>">Previous</a>
+    <% } %>
+    <%if (next) { %>
+        <a href="<%= next %>">Next</a>
+    <% } %>
 </body>
 <%- include('_footer') -%>
 </html>
