@@ -1,1 +1,89 @@
 /* Add your styles here. */
+body{
+    background-color: #252A38;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color:white;
+    margin: 3em;
+}
+h1 {
+    font-weight: bolder;
+    text-align: center;
+}
+.post{
+    /* background-color: #151820; */
+
+    background-color: #545f80; 
+    padding: 1em;
+    width: 100%;
+    margin-bottom: 1em;
+    box-sizing: border-box;
+    /* margin-left: 1em; */
+
+}
+.post-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style-type: none;
+    padding: 0;
+}
+.post-posted-by{
+    font-style: italic;
+    color: #bdb2b2;
+}
+.post-image{
+    border-radius: 1em;
+    border: 1px solid #bdb2b2;
+    box-shadow: 20px 50px 50px rgba(0,0,0,0.19), 
+    10px 6px 6px rgba(0,0,0,0.23);
+  }
+span{
+    font-weight: bold;
+}
+.direction{
+    font-style: italic;
+}
+a {
+    text-decoration: none;
+    display: inline-block;
+    padding: 8px 16px;
+    color: rgb(243, 239, 239);
+    background-color: #f1f1f1;
+}
+
+a:hover {
+    background-color:#bdb2b2;
+    color: black;
+}
+a:visited {
+    background-color: #ddd;
+    color: white;
+}
+/* .previous {
+    background-color: #f1f1f1;
+    color: black;
+}
+
+.next {
+    background-color:#bdb2b2;
+    color: white;
+} */
+
+@media (min-width:300px) and (max-width:600px)  {
+  .post{ 
+    width: calc(100% - 2em);
+  }  
+    
+}
+@media (min-width:600px) and (max-width:900px)  {
+    .post{ 
+      width: calc((100% - 1em)/2);
+    }  
+      
+  }
+  @media (min-width:900px) {
+    .post{ 
+      width: calc((100% - 2em)/3);
+    }  
+      
+  }

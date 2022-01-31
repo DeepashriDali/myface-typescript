@@ -2,24 +2,23 @@
 <%- include('_head') -%>
 <%- include('_header') -%>
 <body>
-<h1>Posts</h1>
-<ol>
+<h1>POSTS</h1>
+<ol class = "post-list">
     <% results.forEach(function(post) {%>
-        <li>
-            <p><%= post.message %></p> 
-            <img src=<%= post.imageUrl %> alt = "Post Image" height = "150" width = "150" />
-            <p>Id: <%= post.id %></p> 
-            <p><b>Posted By:</b> <%= post.postedBy.name %> on <%= post.createdAt %></p> 
-            <p><b>Likes:</b> <em><%= post.likedBy.length %></em> <b>Dislikes:</b><em><%= post.dislikedBy.length %></em>
-            </p> 
+        <li class = "post">
+            <img class = "post-image" src=<%= post.imageUrl %> alt = "Post Image" height = "150" width = "150" />
+            <!-- <p>Id: <%= post.id %></p>  -->
+            <p class = "post-message"><%= post.message %></p> 
+            <p class = "post-posted-by">Posted by <%= post.postedBy.name %> on <%= post.createdAt %></p> 
+            <p class = "post-posted-by"><span>Likes: </span><%= post.likedBy.length %><span> Dislikes: </span><%= post.dislikedBy.length %></p> 
         </li>
     <% }); %>
 </ol>
     <%if (previous) { %>
-    <a href="<%= previous %>">Previous</a>
+    <a class = "previous" href="<%= previous %>">Previous</a>
     <% } %>
     <%if (next) { %>
-        <a href="<%= next %>">Next</a>
+    <a class = "next" href="<%= next %>">Next</a>
     <% } %>
 </body>
 <%- include('_footer') -%>
