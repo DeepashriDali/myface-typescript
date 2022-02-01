@@ -2,21 +2,46 @@
 <%- include('_head') -%>
 <%- include('_header') -%>
 <body>
-<h1><%= name %></h1>
-<p><%= username %></p>
-<p><%= email %></p>
-<img 
-src = "<%=  profileImageUrl %>" 
-alt = "Profile Image>" 
-height = "150" 
-width = "150" 
-/>
-<img 
-src = "<%=  coverImageUrl %>" 
-alt = "<%= name %>" 
-height = "150" 
-width = "150" 
-/>
+    <div class = "user-info">
+        <section class="cover-container">
+            <img class = "cover-image"
+            src = "<%=  coverImageUrl %>" 
+            alt = "<%= name %>" 
+            height = "150" 
+            width = "150" 
+            />
+        </section>
+        <section class="profile-container">
+            <img class = "profile-image"
+            src = "<%=  profileImageUrl %>" 
+            alt = "Profile Image>" 
+            height = "150" 
+            width = "150" 
+            />
+        </section>
+   
+   
+        <section class="details-container">
+            <p class="name"><%= name %></p>
+            <p class="username"><%= username %></p>
+            <p class="email"><%= email %></p>
+        </section>
+
+    </div>
+
+
+
+<ol class = "post-list">
+    <% posts.forEach(function(post) {%>
+        <li class = "post">
+            <img class = "post-image" src=<%= post.imageUrl %> alt = "Posted Image" height = "150" width = "150" />
+            <!-- <p>Id: <%= post.id %></p>  -->
+            <p class = "post-posted-by"><%= username %> </p> 
+            <p class = "post-date"> <%= post.createdAt %></p> 
+            <p class = "post-message"><%= post.message %></p> 
+        </li>
+    <% }); %>
+</ol>
 
  
 </body>
