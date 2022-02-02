@@ -2,40 +2,37 @@
 <%- include('_head') -%>
 <%- include('_header') -%>
 <body>
-    <div class = "user-info">
-        <section class="cover-container">
-            <img class = "cover-image"
-            src = "<%=  coverImageUrl %>" 
-            alt = "<%= name %>" 
-            height = "150" 
-            width = "150" 
-            />
-        </section>
-        <section class="profile-container">
-            <img class = "profile-image"
-            src = "<%=  profileImageUrl %>" 
-            alt = "Profile Image>" 
-            height = "150" 
-            width = "150" 
-            />
-        </section>
-   
-   
-        <section class="details-container">
-            <p class="name"><%= name %></p>
-            <p class="username"><%= username %></p>
-            <p class="email"><%= email %></p>
-        </section>
-
+<div class = "user-detail-header">
+     
+    <img class = "cover-image"
+        src = "<%=  coverImageUrl %>" 
+        alt = "<%= name %>" 
+        height = "150" 
+        width = "150" 
+    />
+  
+       
+    <img class = "profile-image"
+        src = "<%=  profileImageUrl %>" 
+        alt = "Profile Image>" 
+        height = "150" 
+        width = "150" 
+    />
+       
+    <div class="user-details">
+        <p class="name"><%= name %></p>
+        <p class="username"><%= username %></p>
+        <p class="email"><%= email %></p>
     </div>
+              
+</div>
 
-
+<h2 class = "user-header"><%= name %>'s Posts</h2>
 
 <ol class = "post-list">
     <% posts.forEach(function(post) {%>
         <li class = "post">
-            <img class = "post-image" src=<%= post.imageUrl %> alt = "Posted Image" height = "150" width = "150" />
-            <!-- <p>Id: <%= post.id %></p>  -->
+            <img class = "post-image" src=<%= post.imageUrl %> alt = <%= post.message %> height = "150" width = "150" />
             <p class = "post-posted-by"><%= username %> </p> 
             <p class = "post-date"> <%= post.createdAt %></p> 
             <p class = "post-message"><%= post.message %></p> 
